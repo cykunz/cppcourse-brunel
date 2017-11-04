@@ -1,0 +1,346 @@
+\hypertarget{classNetwork}{\section{Network Class Reference}
+\label{classNetwork}\index{Network@{Network}}
+}
+
+
+\hyperlink{classNetwork}{Network} class.  
+
+
+
+
+{\ttfamily \#include $<$Network.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNetwork_a91e7956657baf526ceeff2896889c811}{Network} (bool all, bool random, vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$ new\-\_\-neur=vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$(0), unsigned int clock=0, unsigned int read=0, unsigned int write=delay\-\_\-steps)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{$\sim$\-Network} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNetwork_a0d38219c6a64a9532b05d61d05b85a11}{get\-Clock\-Time} () const 
+\begin{DoxyCompactList}\small\item\em Gets the clock time (simulation time) \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$ \hyperlink{classNetwork_a8032b42ba5c9c445dcc0dd0a4916f633}{get\-Neurons} () const 
+\begin{DoxyCompactList}\small\item\em Gets the neurons in the network. \end{DoxyCompactList}\item 
+matrix \hyperlink{classNetwork_a619c7fc6bfe06db4b449c96051f9c409}{get\-Links} () const 
+\begin{DoxyCompactList}\small\item\em Gets the matrix of links in the network. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a29c7bae73b6e6a54316fd8ab01a39d1a}{set\-Clock\-Time} (unsigned int const \&new\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Sets the clock time. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a557c23dd89353bae628ebe6a968f5a7f}{set\-Neurons} (vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$ const \&new\-\_\-neurons)
+\begin{DoxyCompactList}\small\item\em Sets the neurons in the network. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_af89d1a0e70ef3a30e676031871fa784a}{add\-Neuron} (\hyperlink{classNeuron}{Neuron} $\ast$neuron\-\_\-to\-\_\-add)
+\begin{DoxyCompactList}\small\item\em A public function taking a \hyperlink{classNeuron}{Neuron} pointer as parameter. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a9bc7d1c48a7697d156049754bfd278f0}{clear\-Neurons} ()
+\begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a66002602288e0fcb2eac9e45cbdca49a}{create\-Link} (vector$<$ unsigned int $>$ neurons\-\_\-to\-\_\-link)
+\begin{DoxyCompactList}\small\item\em A public function taking vector of pointers on neurons as a parameter. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a877fa66bfd9ce699eb60d3e467296677}{initialize\-Connections} ()
+\begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNetwork_a2202512d5859cdf5560a9e790c83cca1}{uniform} (unsigned int const \&min, unsigned int const \&max)
+\begin{DoxyCompactList}\small\item\em A public function taking two unsigned int as parameters. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNetwork_a37bbf43b2a9a494c83fe89069d6b8af3}{random\-Spikes} ()
+\begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a3f434b2e65713f94664623e845f18317}{update} (double const \&endtime)
+\begin{DoxyCompactList}\small\item\em A public function taking a double argument. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a683728dac1747ff9605bc1884b46ad0d}{update\-Buffer} ()
+\begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classNetwork_a4ae561779053e1b5be2422cb3170417a}{all\-\_\-}
+\item 
+bool \hyperlink{classNetwork_a4e092c1d6ac94d836db8cc21987cea8b}{random\-\_\-wanted\-\_\-}
+\item 
+vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$ \hyperlink{classNetwork_a6f71e4eb423d2f8fd9cfa8d5f01cb257}{neurons\-\_\-}
+\item 
+unsigned int \hyperlink{classNetwork_a18d3152b3b67965689cb9aa2241eea60}{clock\-\_\-time\-\_\-}
+\item 
+unsigned int \hyperlink{classNetwork_a2deae5cc2b7c3805d4073902f66a2a5d}{index\-\_\-read\-\_\-}
+\item 
+unsigned int \hyperlink{classNetwork_a1ad1c1f7a31dc2e5215d5032d539c238}{index\-\_\-write\-\_\-}
+\item 
+matrix \hyperlink{classNetwork_a62673362a51ee5efe3663f324e6624a2}{links\-\_\-}
+\item 
+mt19937 \hyperlink{classNetwork_ad347753a95a50caf5c7df6798587b68f}{generator}
+\item 
+poisson\-\_\-distribution$<$ unsigned \\*
+int $>$ \hyperlink{classNetwork_a8bf522b67910db2becace84c61e24336}{distribution}
+\item 
+ofstream \hyperlink{classNetwork_a92dc3befe6139a49991f2457d81884e1}{file}
+\item 
+ofstream \hyperlink{classNetwork_a278c3f19603f68ef1bd0b6e52f04d2db}{f}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classNetwork}{Network} class. 
+
+A network is caracterized by the neurons it contains, its global time, the indexes to\-\_\-read\-\_\- and to\-\_\-write\-\_\- in each neuron's buffer as well as a matrix of indexes of neurons linked.
+
+This configuration of indexes will make both indexes evolve together, therefore making sure that the delay between them is always of delay\-\_\-steps. Indeed, a neuron will receive its spike at index\-\_\-write\-\_\-, which is delay\-\_\-steps\-\_\- later than index\-\_\-read\-\_\-.
+
+The network is optimized in order to choose whether the network will contain all 12500 neurons, as well as whether background noise is wanted or not. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNetwork_a91e7956657baf526ceeff2896889c811}{\index{Network@{Network}!Network@{Network}}
+\index{Network@{Network}!Network@{Network}}
+\subsubsection[{Network}]{\setlength{\rightskip}{0pt plus 5cm}Network\-::\-Network (
+\begin{DoxyParamCaption}
+\item[{bool}]{all, }
+\item[{bool}]{random, }
+\item[{vector$<$ {\bf Neuron} $\ast$ $>$}]{new\-\_\-neur = {\ttfamily vector$<${\bf Neuron}$\ast$$>$(0)}, }
+\item[{unsigned int}]{clock = {\ttfamily 0}, }
+\item[{unsigned int}]{read = {\ttfamily 0}, }
+\item[{unsigned int}]{write = {\ttfamily delay\-\_\-steps}}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a91e7956657baf526ceeff2896889c811}
+
+
+Constructor. 
+
+By default, the vector of neurons it contains has a size of 0, the simulation time is set to 0, the index to read from the buffer starts at index 0, whereas the index to write starts at index delay\-\_\-steps. \hypertarget{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{\index{Network@{Network}!$\sim$\-Network@{$\sim$\-Network}}
+\index{$\sim$\-Network@{$\sim$\-Network}!Network@{Network}}
+\subsubsection[{$\sim$\-Network}]{\setlength{\rightskip}{0pt plus 5cm}Network\-::$\sim$\-Network (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}
+
+
+Destructor. 
+
+Clears the vector of neurons in the network by setting them to nullptr and deleting them. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNetwork_af89d1a0e70ef3a30e676031871fa784a}{\index{Network@{Network}!add\-Neuron@{add\-Neuron}}
+\index{add\-Neuron@{add\-Neuron}!Network@{Network}}
+\subsubsection[{add\-Neuron}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::add\-Neuron (
+\begin{DoxyParamCaption}
+\item[{{\bf Neuron} $\ast$}]{neuron\-\_\-to\-\_\-add}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_af89d1a0e70ef3a30e676031871fa784a}
+
+
+A public function taking a \hyperlink{classNeuron}{Neuron} pointer as parameter. 
+
+! Adds a neuron to the list of neurons in the network. 
+\begin{DoxyParams}{Parameters}
+{\em neuron\-\_\-to\-\_\-add} & Pointer on a neuron \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a9bc7d1c48a7697d156049754bfd278f0}{\index{Network@{Network}!clear\-Neurons@{clear\-Neurons}}
+\index{clear\-Neurons@{clear\-Neurons}!Network@{Network}}
+\subsubsection[{clear\-Neurons}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::clear\-Neurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a9bc7d1c48a7697d156049754bfd278f0}
+
+
+A public function. 
+
+Clears the vector of all neurons in the network. \hypertarget{classNetwork_a66002602288e0fcb2eac9e45cbdca49a}{\index{Network@{Network}!create\-Link@{create\-Link}}
+\index{create\-Link@{create\-Link}!Network@{Network}}
+\subsubsection[{create\-Link}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::create\-Link (
+\begin{DoxyParamCaption}
+\item[{vector$<$ unsigned int $>$}]{neurons\-\_\-to\-\_\-link}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a66002602288e0fcb2eac9e45cbdca49a}
+
+
+A public function taking vector of pointers on neurons as a parameter. 
+
+Links all neurons in the vector given with respective weights. This method was mostly used to link 2 neurons. 
+\begin{DoxyParams}{Parameters}
+{\em neurons\-\_\-to\-\_\-link} & Vector of unsigned integers with indexes of neurons wanting to be linked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a0d38219c6a64a9532b05d61d05b85a11}{\index{Network@{Network}!get\-Clock\-Time@{get\-Clock\-Time}}
+\index{get\-Clock\-Time@{get\-Clock\-Time}!Network@{Network}}
+\subsubsection[{get\-Clock\-Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Network\-::get\-Clock\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a0d38219c6a64a9532b05d61d05b85a11}
+
+
+Gets the clock time (simulation time) 
+
+\begin{DoxyReturn}{Returns}
+\-: Simulation time, as a dt step. 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a619c7fc6bfe06db4b449c96051f9c409}{\index{Network@{Network}!get\-Links@{get\-Links}}
+\index{get\-Links@{get\-Links}!Network@{Network}}
+\subsubsection[{get\-Links}]{\setlength{\rightskip}{0pt plus 5cm}matrix Network\-::get\-Links (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a619c7fc6bfe06db4b449c96051f9c409}
+
+
+Gets the matrix of links in the network. 
+
+\begin{DoxyReturn}{Returns}
+Matrix of links 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a8032b42ba5c9c445dcc0dd0a4916f633}{\index{Network@{Network}!get\-Neurons@{get\-Neurons}}
+\index{get\-Neurons@{get\-Neurons}!Network@{Network}}
+\subsubsection[{get\-Neurons}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Neuron} $\ast$ $>$ Network\-::get\-Neurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a8032b42ba5c9c445dcc0dd0a4916f633}
+
+
+Gets the neurons in the network. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers on neurons. 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a877fa66bfd9ce699eb60d3e467296677}{\index{Network@{Network}!initialize\-Connections@{initialize\-Connections}}
+\index{initialize\-Connections@{initialize\-Connections}!Network@{Network}}
+\subsubsection[{initialize\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::initialize\-Connections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a877fa66bfd9ce699eb60d3e467296677}
+
+
+A public function. 
+
+Initializes the matrix of connections in the network. \hypertarget{classNetwork_a37bbf43b2a9a494c83fe89069d6b8af3}{\index{Network@{Network}!random\-Spikes@{random\-Spikes}}
+\index{random\-Spikes@{random\-Spikes}!Network@{Network}}
+\subsubsection[{random\-Spikes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Network\-::random\-Spikes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a37bbf43b2a9a494c83fe89069d6b8af3}
+
+
+A public function. 
+
+Gives a certain number of spikes generated randomly from external neurons, with a poisson distribution. \begin{DoxyReturn}{Returns}
+unsigned integer\-: Number of spikes. 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a29c7bae73b6e6a54316fd8ab01a39d1a}{\index{Network@{Network}!set\-Clock\-Time@{set\-Clock\-Time}}
+\index{set\-Clock\-Time@{set\-Clock\-Time}!Network@{Network}}
+\subsubsection[{set\-Clock\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::set\-Clock\-Time (
+\begin{DoxyParamCaption}
+\item[{unsigned int const \&}]{new\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a29c7bae73b6e6a54316fd8ab01a39d1a}
+
+
+Sets the clock time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-time} & New value for the clock time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a557c23dd89353bae628ebe6a968f5a7f}{\index{Network@{Network}!set\-Neurons@{set\-Neurons}}
+\index{set\-Neurons@{set\-Neurons}!Network@{Network}}
+\subsubsection[{set\-Neurons}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::set\-Neurons (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Neuron} $\ast$ $>$ const \&}]{new\-\_\-neurons}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a557c23dd89353bae628ebe6a968f5a7f}
+
+
+Sets the neurons in the network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-neurons} & New vector of neurons wanting to be part of the network. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a2202512d5859cdf5560a9e790c83cca1}{\index{Network@{Network}!uniform@{uniform}}
+\index{uniform@{uniform}!Network@{Network}}
+\subsubsection[{uniform}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Network\-::uniform (
+\begin{DoxyParamCaption}
+\item[{unsigned int const \&}]{min, }
+\item[{unsigned int const \&}]{max}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a2202512d5859cdf5560a9e790c83cca1}
+
+
+A public function taking two unsigned int as parameters. 
+
+Generates a random integer between min and max. 
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum limit of value wanting to be generated. \\
+\hline
+{\em max} & Maximum limit of value wanting to be generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned int\-: Random integer between min and max. 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a3f434b2e65713f94664623e845f18317}{\index{Network@{Network}!update@{update}}
+\index{update@{update}!Network@{Network}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::update (
+\begin{DoxyParamCaption}
+\item[{double const \&}]{endtime}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a3f434b2e65713f94664623e845f18317}
+
+
+A public function taking a double argument. 
+
+Method updating all neurons in the network, passing on the spike signal in case of spike. 
+\begin{DoxyParams}{Parameters}
+{\em endtime} & Time at which simulation ends. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a683728dac1747ff9605bc1884b46ad0d}{\index{Network@{Network}!update\-Buffer@{update\-Buffer}}
+\index{update\-Buffer@{update\-Buffer}!Network@{Network}}
+\subsubsection[{update\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::update\-Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a683728dac1747ff9605bc1884b46ad0d}
+
+
+A public function. 
+
+Method updating the indexes to read and to write. s 
+
+\subsection{Member Data Documentation}
+\hypertarget{classNetwork_a4ae561779053e1b5be2422cb3170417a}{\index{Network@{Network}!all\-\_\-@{all\-\_\-}}
+\index{all\-\_\-@{all\-\_\-}!Network@{Network}}
+\subsubsection[{all\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Network\-::all\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a4ae561779053e1b5be2422cb3170417a}
+Set to true if all 12500 neurons are part of the network. \hypertarget{classNetwork_a18d3152b3b67965689cb9aa2241eea60}{\index{Network@{Network}!clock\-\_\-time\-\_\-@{clock\-\_\-time\-\_\-}}
+\index{clock\-\_\-time\-\_\-@{clock\-\_\-time\-\_\-}!Network@{Network}}
+\subsubsection[{clock\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Network\-::clock\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a18d3152b3b67965689cb9aa2241eea60}
+Global time of network. \hypertarget{classNetwork_a8bf522b67910db2becace84c61e24336}{\index{Network@{Network}!distribution@{distribution}}
+\index{distribution@{distribution}!Network@{Network}}
+\subsubsection[{distribution}]{\setlength{\rightskip}{0pt plus 5cm}poisson\-\_\-distribution$<$unsigned int$>$ Network\-::distribution\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a8bf522b67910db2becace84c61e24336}
+(distribution)\-: Poisson distribution \hypertarget{classNetwork_a278c3f19603f68ef1bd0b6e52f04d2db}{\index{Network@{Network}!f@{f}}
+\index{f@{f}!Network@{Network}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}ofstream Network\-::f\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a278c3f19603f68ef1bd0b6e52f04d2db}
+File keeping track of the ids of neurons spiking at a time. \hypertarget{classNetwork_a92dc3befe6139a49991f2457d81884e1}{\index{Network@{Network}!file@{file}}
+\index{file@{file}!Network@{Network}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}ofstream Network\-::file\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a92dc3befe6139a49991f2457d81884e1}
+! The following variables enables us to have access to these files in the update method\-: they are opened in the constructor and closed in the destructor. File keeping track of the number of spikes per time step. \hypertarget{classNetwork_ad347753a95a50caf5c7df6798587b68f}{\index{Network@{Network}!generator@{generator}}
+\index{generator@{generator}!Network@{Network}}
+\subsubsection[{generator}]{\setlength{\rightskip}{0pt plus 5cm}mt19937 Network\-::generator\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_ad347753a95a50caf5c7df6798587b68f}
+! The following variables are useful to generate random integers, wanted when initializing connections between neurons and generating random spikes. Mersenne twister engine. \hypertarget{classNetwork_a2deae5cc2b7c3805d4073902f66a2a5d}{\index{Network@{Network}!index\-\_\-read\-\_\-@{index\-\_\-read\-\_\-}}
+\index{index\-\_\-read\-\_\-@{index\-\_\-read\-\_\-}!Network@{Network}}
+\subsubsection[{index\-\_\-read\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Network\-::index\-\_\-read\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a2deae5cc2b7c3805d4073902f66a2a5d}
+(index\-\_\-read\-\_\-)\-: Index when reading the neuron's buffer. \hypertarget{classNetwork_a1ad1c1f7a31dc2e5215d5032d539c238}{\index{Network@{Network}!index\-\_\-write\-\_\-@{index\-\_\-write\-\_\-}}
+\index{index\-\_\-write\-\_\-@{index\-\_\-write\-\_\-}!Network@{Network}}
+\subsubsection[{index\-\_\-write\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Network\-::index\-\_\-write\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a1ad1c1f7a31dc2e5215d5032d539c238}
+(index\-\_\-write\-\_\-)\-: Index when writing spikes (index\-\_\-read+delay\-\_\-steps). \hypertarget{classNetwork_a62673362a51ee5efe3663f324e6624a2}{\index{Network@{Network}!links\-\_\-@{links\-\_\-}}
+\index{links\-\_\-@{links\-\_\-}!Network@{Network}}
+\subsubsection[{links\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}matrix Network\-::links\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a62673362a51ee5efe3663f324e6624a2}
+(links\-\_\- )\-:Matrix of links between neurons. \hypertarget{classNetwork_a6f71e4eb423d2f8fd9cfa8d5f01cb257}{\index{Network@{Network}!neurons\-\_\-@{neurons\-\_\-}}
+\index{neurons\-\_\-@{neurons\-\_\-}!Network@{Network}}
+\subsubsection[{neurons\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Neuron}$\ast$$>$ Network\-::neurons\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a6f71e4eb423d2f8fd9cfa8d5f01cb257}
+Vector of pointers on the neurons containted in the network. \hypertarget{classNetwork_a4e092c1d6ac94d836db8cc21987cea8b}{\index{Network@{Network}!random\-\_\-wanted\-\_\-@{random\-\_\-wanted\-\_\-}}
+\index{random\-\_\-wanted\-\_\-@{random\-\_\-wanted\-\_\-}!Network@{Network}}
+\subsubsection[{random\-\_\-wanted\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Network\-::random\-\_\-wanted\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a4e092c1d6ac94d836db8cc21987cea8b}
+Set to true if we want to include random spikes as background noise or not. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Network.\-hpp\item 
+Network.\-cpp\end{DoxyCompactItemize}

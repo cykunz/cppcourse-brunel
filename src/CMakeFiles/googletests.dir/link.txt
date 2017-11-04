@@ -1,0 +1,1 @@
+/usr/bin/c++    -W -Wall -pedantic -std=c++11    CMakeFiles/googletests.dir/Neuron.cpp.o CMakeFiles/googletests.dir/Network.cpp.o CMakeFiles/googletests.dir/googletests.cpp.o  -o googletests -rdynamic gtest/googlemock/gtest/libgtest.a gtest/googlemock/gtest/libgtest_main.a gtest/googlemock/gtest/libgtest.a -pthread 

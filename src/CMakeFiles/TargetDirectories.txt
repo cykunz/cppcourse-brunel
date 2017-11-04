@@ -1,0 +1,7 @@
+/home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/doc.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/gtest/googlemock/gtest/CMakeFiles/gtest.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/googletests.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/AllNeurons.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/gtest/googlemock/CMakeFiles/gmock.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/gtest/googlemock/CMakeFiles/gmock_main.dir
