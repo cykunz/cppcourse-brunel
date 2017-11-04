@@ -17,7 +17,7 @@
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classNeuron_a94a250ce7e167760e593979b899745b1}{$\sim$\-Neuron} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-int \hyperlink{classNeuron_ab7d4290b3d149f9b3bfb09b4e898e1d4}{get\-Buffer} (int const \&idx) const 
+double \hyperlink{classNeuron_a020167e5c41dcb992c17029aaee2af01}{get\-Buffer} (int const \&idx) const 
 \begin{DoxyCompactList}\small\item\em Gets the buffer value at a certain index. \end{DoxyCompactList}\item 
 bool \hyperlink{classNeuron_a185f67cb52f92805222fcef8e8236e43}{get\-Excitatory} () const 
 \begin{DoxyCompactList}\small\item\em Getter of whether the neuron is excitatory or not. \end{DoxyCompactList}\item 
@@ -51,6 +51,8 @@ double \hyperlink{classNeuron_a3f673331282b347a4707eb7f8f20c34c}{Membrane\-Poten
 \begin{DoxyCompactList}\small\item\em A public function taking a double as parameter. \end{DoxyCompactList}\item 
 void \hyperlink{classNeuron_aa9a049a8a1f452535cea30b7f0c3f098}{receive} (unsigned int const \&to\-\_\-write, double const \&amplitude)
 \begin{DoxyCompactList}\small\item\em A public function taking an integer argument. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_ac13c55318bd649c28cea12c74e6e134e}{show\-Time\-Values} () const 
+\begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
 bool \hyperlink{classNeuron_a89ba2df0157a060f1c1be96479f7c3ed}{update} (unsigned int const \&randomspikes, unsigned int const \&to\-\_\-read)
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
@@ -144,13 +146,13 @@ Adds the time at which a spike occured to the vector.
 {\em new\-\_\-time\-\_\-value} & Time at which a spike occured, wanting to be recorded. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classNeuron_ab7d4290b3d149f9b3bfb09b4e898e1d4}{\index{Neuron@{Neuron}!get\-Buffer@{get\-Buffer}}
+\hypertarget{classNeuron_a020167e5c41dcb992c17029aaee2af01}{\index{Neuron@{Neuron}!get\-Buffer@{get\-Buffer}}
 \index{get\-Buffer@{get\-Buffer}!Neuron@{Neuron}}
-\subsubsection[{get\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}int Neuron\-::get\-Buffer (
+\subsubsection[{get\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::get\-Buffer (
 \begin{DoxyParamCaption}
 \item[{int const \&}]{idx}
 \end{DoxyParamCaption}
-) const}}\label{classNeuron_ab7d4290b3d149f9b3bfb09b4e898e1d4}
+) const}}\label{classNeuron_a020167e5c41dcb992c17029aaee2af01}
 
 
 Gets the buffer value at a certain index. 
@@ -384,7 +386,18 @@ Sets the vector of times of spikes.
 {\em new\-\_\-time} & New vector of times of spikes. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classNeuron_a89ba2df0157a060f1c1be96479f7c3ed}{\index{Neuron@{Neuron}!update@{update}}
+\hypertarget{classNeuron_ac13c55318bd649c28cea12c74e6e134e}{\index{Neuron@{Neuron}!show\-Time\-Values@{show\-Time\-Values}}
+\index{show\-Time\-Values@{show\-Time\-Values}!Neuron@{Neuron}}
+\subsubsection[{show\-Time\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::show\-Time\-Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_ac13c55318bd649c28cea12c74e6e134e}
+
+
+A public function. 
+
+Shows the times at which the neuron spiked in the terminal. \hypertarget{classNeuron_a89ba2df0157a060f1c1be96479f7c3ed}{\index{Neuron@{Neuron}!update@{update}}
 \index{update@{update}!Neuron@{Neuron}}
 \subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::update (
 \begin{DoxyParamCaption}

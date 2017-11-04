@@ -3,6 +3,8 @@ project (Network)
 
 set(CMAKE_CXX_FLAGS " -W -Wall -pedantic -std=c++11 ")
 
+add_executable(OneNeuron ../src/Neuron.cpp ../src/Network.cpp ../src/oneneurontest.cpp)
+add_executable(Buffer ../src/Neuron.cpp ../src/Network.cpp ../src/buffertest.cpp)
 add_executable (AllNeurons ../src/Neuron.cpp ../src/Network.cpp ../src/test_allneurons.cpp)
 add_executable(googletests ../src/Neuron.cpp ../src/Network.cpp ../src/googletests.cpp)
 

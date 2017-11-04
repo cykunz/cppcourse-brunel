@@ -166,6 +166,32 @@ AllNeurons/fast:
 .PHONY : AllNeurons/fast
 
 #=============================================================================
+# Target rules for targets named Buffer
+
+# Build rule for target.
+Buffer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Buffer
+.PHONY : Buffer
+
+# fast build rule for target.
+Buffer/fast:
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/build
+.PHONY : Buffer/fast
+
+#=============================================================================
+# Target rules for targets named OneNeuron
+
+# Build rule for target.
+OneNeuron: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OneNeuron
+.PHONY : OneNeuron
+
+# fast build rule for target.
+OneNeuron/fast:
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/build
+.PHONY : OneNeuron/fast
+
+#=============================================================================
 # Target rules for targets named doc
 
 # Build rule for target.
@@ -249,6 +275,8 @@ Network.o: Network.cpp.o
 # target to build an object file
 Network.cpp.o:
 	$(MAKE) -f CMakeFiles/AllNeurons.dir/build.make CMakeFiles/AllNeurons.dir/Network.cpp.o
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/Network.cpp.o
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/Network.cpp.o
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/Network.cpp.o
 .PHONY : Network.cpp.o
 
@@ -258,6 +286,8 @@ Network.i: Network.cpp.i
 # target to preprocess a source file
 Network.cpp.i:
 	$(MAKE) -f CMakeFiles/AllNeurons.dir/build.make CMakeFiles/AllNeurons.dir/Network.cpp.i
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/Network.cpp.i
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/Network.cpp.i
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/Network.cpp.i
 .PHONY : Network.cpp.i
 
@@ -267,6 +297,8 @@ Network.s: Network.cpp.s
 # target to generate assembly for a file
 Network.cpp.s:
 	$(MAKE) -f CMakeFiles/AllNeurons.dir/build.make CMakeFiles/AllNeurons.dir/Network.cpp.s
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/Network.cpp.s
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/Network.cpp.s
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/Network.cpp.s
 .PHONY : Network.cpp.s
 
@@ -276,6 +308,8 @@ Neuron.o: Neuron.cpp.o
 # target to build an object file
 Neuron.cpp.o:
 	$(MAKE) -f CMakeFiles/AllNeurons.dir/build.make CMakeFiles/AllNeurons.dir/Neuron.cpp.o
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/Neuron.cpp.o
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/Neuron.cpp.o
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/Neuron.cpp.o
 .PHONY : Neuron.cpp.o
 
@@ -285,6 +319,8 @@ Neuron.i: Neuron.cpp.i
 # target to preprocess a source file
 Neuron.cpp.i:
 	$(MAKE) -f CMakeFiles/AllNeurons.dir/build.make CMakeFiles/AllNeurons.dir/Neuron.cpp.i
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/Neuron.cpp.i
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/Neuron.cpp.i
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/Neuron.cpp.i
 .PHONY : Neuron.cpp.i
 
@@ -294,8 +330,34 @@ Neuron.s: Neuron.cpp.s
 # target to generate assembly for a file
 Neuron.cpp.s:
 	$(MAKE) -f CMakeFiles/AllNeurons.dir/build.make CMakeFiles/AllNeurons.dir/Neuron.cpp.s
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/Neuron.cpp.s
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/Neuron.cpp.s
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/Neuron.cpp.s
 .PHONY : Neuron.cpp.s
+
+buffertest.o: buffertest.cpp.o
+.PHONY : buffertest.o
+
+# target to build an object file
+buffertest.cpp.o:
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/buffertest.cpp.o
+.PHONY : buffertest.cpp.o
+
+buffertest.i: buffertest.cpp.i
+.PHONY : buffertest.i
+
+# target to preprocess a source file
+buffertest.cpp.i:
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/buffertest.cpp.i
+.PHONY : buffertest.cpp.i
+
+buffertest.s: buffertest.cpp.s
+.PHONY : buffertest.s
+
+# target to generate assembly for a file
+buffertest.cpp.s:
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/buffertest.cpp.s
+.PHONY : buffertest.cpp.s
 
 googletests.o: googletests.cpp.o
 .PHONY : googletests.o
@@ -320,6 +382,30 @@ googletests.s: googletests.cpp.s
 googletests.cpp.s:
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/googletests.cpp.s
 .PHONY : googletests.cpp.s
+
+oneneurontest.o: oneneurontest.cpp.o
+.PHONY : oneneurontest.o
+
+# target to build an object file
+oneneurontest.cpp.o:
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/oneneurontest.cpp.o
+.PHONY : oneneurontest.cpp.o
+
+oneneurontest.i: oneneurontest.cpp.i
+.PHONY : oneneurontest.i
+
+# target to preprocess a source file
+oneneurontest.cpp.i:
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/oneneurontest.cpp.i
+.PHONY : oneneurontest.cpp.i
+
+oneneurontest.s: oneneurontest.cpp.s
+.PHONY : oneneurontest.s
+
+# target to generate assembly for a file
+oneneurontest.cpp.s:
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/oneneurontest.cpp.s
+.PHONY : oneneurontest.cpp.s
 
 test_allneurons.o: test_allneurons.cpp.o
 .PHONY : test_allneurons.o
@@ -351,9 +437,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... Buffer"
 	@echo "... install/strip"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... OneNeuron"
 	@echo "... install"
 	@echo "... doc"
 	@echo "... list_install_components"
@@ -371,9 +459,15 @@ help:
 	@echo "... Neuron.o"
 	@echo "... Neuron.i"
 	@echo "... Neuron.s"
+	@echo "... buffertest.o"
+	@echo "... buffertest.i"
+	@echo "... buffertest.s"
 	@echo "... googletests.o"
 	@echo "... googletests.i"
 	@echo "... googletests.s"
+	@echo "... oneneurontest.o"
+	@echo "... oneneurontest.i"
+	@echo "... oneneurontest.s"
 	@echo "... test_allneurons.o"
 	@echo "... test_allneurons.i"
 	@echo "... test_allneurons.s"

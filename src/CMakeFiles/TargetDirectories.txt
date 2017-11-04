@@ -1,3 +1,5 @@
+/home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/Buffer.dir
+/home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/OneNeuron.dir
 /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/doc.dir
 /home/localguest/Documents/Neuron/NeuronProject/src/gtest/googlemock/gtest/CMakeFiles/gtest.dir
 /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles/googletests.dir

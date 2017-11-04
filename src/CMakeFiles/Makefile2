@@ -88,13 +88,83 @@ clean: CMakeFiles/AllNeurons.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/Buffer.dir
+
+# All Build rule for target.
+CMakeFiles/Buffer.dir/all:
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/depend
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  4 5 6
+	@echo "Built target Buffer"
+.PHONY : CMakeFiles/Buffer.dir/all
+
+# Include target in all.
+all: CMakeFiles/Buffer.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Buffer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Buffer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles 0
+.PHONY : CMakeFiles/Buffer.dir/rule
+
+# Convenience name for target.
+Buffer: CMakeFiles/Buffer.dir/rule
+.PHONY : Buffer
+
+# clean rule for target.
+CMakeFiles/Buffer.dir/clean:
+	$(MAKE) -f CMakeFiles/Buffer.dir/build.make CMakeFiles/Buffer.dir/clean
+.PHONY : CMakeFiles/Buffer.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Buffer.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/OneNeuron.dir
+
+# All Build rule for target.
+CMakeFiles/OneNeuron.dir/all:
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/depend
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  7 8 9
+	@echo "Built target OneNeuron"
+.PHONY : CMakeFiles/OneNeuron.dir/all
+
+# Include target in all.
+all: CMakeFiles/OneNeuron.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/OneNeuron.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/OneNeuron.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles 0
+.PHONY : CMakeFiles/OneNeuron.dir/rule
+
+# Convenience name for target.
+OneNeuron: CMakeFiles/OneNeuron.dir/rule
+.PHONY : OneNeuron
+
+# clean rule for target.
+CMakeFiles/OneNeuron.dir/clean:
+	$(MAKE) -f CMakeFiles/OneNeuron.dir/build.make CMakeFiles/OneNeuron.dir/clean
+.PHONY : CMakeFiles/OneNeuron.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/OneNeuron.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/doc.dir
 
 # All Build rule for target.
 CMakeFiles/doc.dir/all:
 	$(MAKE) -f CMakeFiles/doc.dir/build.make CMakeFiles/doc.dir/depend
 	$(MAKE) -f CMakeFiles/doc.dir/build.make CMakeFiles/doc.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  10
 	@echo "Built target doc"
 .PHONY : CMakeFiles/doc.dir/all
 
@@ -130,7 +200,7 @@ CMakeFiles/googletests.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir
 CMakeFiles/googletests.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/depend
 	$(MAKE) -f CMakeFiles/googletests.dir/build.make CMakeFiles/googletests.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  10 11 12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  16 17 18
 	@echo "Built target googletests"
 .PHONY : CMakeFiles/googletests.dir/all
 
@@ -199,7 +269,7 @@ gtest/googlemock/preinstall: gtest/googlemock/gtest/preinstall
 gtest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  5 6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  11 12
 	@echo "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
@@ -234,7 +304,7 @@ clean: gtest/googlemock/CMakeFiles/gmock.dir/clean
 gtest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  7 8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  13 14 15
 	@echo "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
@@ -286,7 +356,7 @@ gtest/googlemock/gtest/preinstall:
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  19
 	@echo "Built target gtest"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
@@ -321,7 +391,7 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  14
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/localguest/Documents/Neuron/NeuronProject/src/CMakeFiles  20
 	@echo "Built target gtest_main"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 

@@ -32,7 +32,6 @@ class Neuron {
 
 	
 	public:
-		//vector<double> buffer_;	/**<	Ring buffer associated with spikes received from linked neurons.	*/
 	//!	Constructor	
 	/*! A neuron will not be excitatory nor refractory within initialization, will have 0 input,
 	 *  and no membrane potential. It will furthermore not be linked to any neuron, nor have spike times
@@ -50,7 +49,7 @@ class Neuron {
 	//! Gets the buffer value at a certain index
 	/*!	@param idx is the index at which we want to find the buffer value.	
 	 * 	@return Buffer value at index.	*/
-	int getBuffer(int const& idx) const;
+	double getBuffer(int const& idx) const;
 	//! Getter of whether the neuron is excitatory or not
 	/*! @return Boolean: true if it is excitatory, false if it is inhibitory. */
 	bool getExcitatory() const;
@@ -113,7 +112,11 @@ class Neuron {
 	 * 	@param to_write: Index of buffer at which the spike is received is recorded.
 	 * 	@param amplitude: Amplitude received.	*/
 	void receive(unsigned int const& to_write, double const& amplitude);
-
+	
+	//! A public function
+	/*! Shows the times at which the neuron spiked in the terminal. */
+	void showTimeValues() const;
+	
 	//!A public function 
 	/*! Updates the membrane potential, depending on if random spikes are wanted or not.
 	 * 	@param randomspikes: Number of random spikes received.

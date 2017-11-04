@@ -231,11 +231,10 @@ void Network::update(double const& endtime)
 								  * index_write in their individual buffers.	*/
 								if(i<NumberExcitatoryNeurons)
 								{	
-									//neurons_[j]->buffer_[index_write_]+=ExcitatoryAmplitude;
 									neurons_[links_[i][j]]->receive(index_write_, ExcitatoryAmplitude);
 
 								} else {
-									//neurons_[j]->buffer_[index_write_]-=InhibitoryAmplitude;
+
 									neurons_[links_[i][j]]->receive(index_write_, InhibitoryAmplitude);
 								}
 							}
@@ -243,6 +242,10 @@ void Network::update(double const& endtime)
 						/*	If the amount of neurons is not of 12500 (useful for testing two neurons),
 						 * 	we iterate in all the linked neurons of the neuron having spiked, and transmit
 						 * 	the signal with an amplitude Amplitude.	*/
+						 
+						 /*	In this case, the file "jupyterplot.txt" will stock the index of the neuron having spiked and its
+						  * membrane potential, which should equal to 0 since after a spike, the membrane potential is set to 0.	*/
+						f<<i+1<<" "<<neurons_[i]->getMembranePotential()<<endl;
 						for(auto& linked: neurons_[i]->getLinkedNeurons())
 						{	
 							neurons_[linked]->receive(index_write_, Amplitude);

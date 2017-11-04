@@ -100,6 +100,21 @@ TEST(NetworkTest, WithSpikes)
 	EXPECT_EQ(2, network.getNeurons()[0]->getTime().size());
 	EXPECT_EQ(0, network.getNeurons()[1]->getTime().size());
 }
+TEST(NetworkTest, WithSpikes2)
+{	/*This test will see if the delay from the ring buffer is installed correctly.	*/
+	Neuron neuron1, neuron2;
+	Network network(false, false);
+	network.setNeurons(vector<Neuron*>{new Neuron(neuron1), new Neuron(neuron2)});
+	network.getNeurons()[0]->setInput(1.01);
+	network.createLink(vector<unsigned int>{0,1});
+	
+	network.update(92.5);
+	
+	/*	The buffer at the time of the spike should be equal to 0, and the one after delay_step should
+	 * 	equal the amplitude transmitted by the neuron that spiked.	*/
+	EXPECT_EQ(0.0, network.getNeurons()[1]->getBuffer(924%(delay_steps+1)));
+	EXPECT_EQ(Amplitude, network.getNeurons()[1]->getBuffer((924+delay_steps)%(delay_steps+1)));
+}
 
 TEST(AllNeuronsTest, NumberNeurons)
 {	/*	A test verifying that there are 12500 neurons in the network.	*/

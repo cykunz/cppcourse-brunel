@@ -1,0 +1,1 @@
+/usr/bin/c++    -W -Wall -pedantic -std=c++11    CMakeFiles/OneNeuron.dir/Neuron.cpp.o CMakeFiles/OneNeuron.dir/Network.cpp.o CMakeFiles/OneNeuron.dir/oneneurontest.cpp.o  -o OneNeuron -rdynamic 

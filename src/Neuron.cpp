@@ -17,7 +17,7 @@ Neuron::~Neuron()
 /***************************************************/
 /*	Getters	*/
 
-int Neuron::getBuffer(int const& idx) const
+double Neuron::getBuffer(int const& idx) const
 {	
 	return buffer_[idx];
 }
@@ -102,7 +102,25 @@ void Neuron::receive(unsigned int const& to_write, double const& amplitude)
 	/*	The spike is saved at an index of to_write in the buffer. */
 	buffer_[to_write]+=amplitude;
 }
-
+void Neuron::showTimeValues() const
+{	/*	Shows the value of the times at which each neuron spiked in the terminal.	*/	
+	if(!time_.empty()){
+		for(size_t i(0); i<time_.size(); ++i)
+		{	
+			cout<<"Spike n°"<<i+1<<"	: "<< time_[i]<<endl;
+			
+		}
+		cout<<"Total of "<<time_.size();
+			if(time_.size()==1)
+			{	cout<<" spike.";
+			} else {
+			cout<<" spikes.";
+			} cout<<endl;
+	} else { 
+		cout<<"No value present."<<endl;
+	}
+	
+}
 
 bool Neuron::update(unsigned int const& randomspikes, unsigned int const& to_read)
 {	/*	Initialization of the spike_time to 0 (no spikes yet).	*/
@@ -115,7 +133,6 @@ bool Neuron::update(unsigned int const& randomspikes, unsigned int const& to_rea
 	if(membrane_potential_>MembraneThreshold)
 	{	
 		/*	Sets the spike time at the present, which is when the spike occurred.	*/
-		//spike_time=present_time_;
 		spike_time=present_time_;
 		
 		/*	Adds the time at which the spike occurred to the vector corresponding.	*/
