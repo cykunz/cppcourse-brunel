@@ -232,10 +232,12 @@ void Network::update(double const& endtime)
 								if(i<NumberExcitatoryNeurons)
 								{	
 									neurons_[links_[i][j]]->receive(index_write_, ExcitatoryAmplitude);
+									//neurons_[links_[i][j]]->receive(index_write_, 1);
 
 								} else {
 
 									neurons_[links_[i][j]]->receive(index_write_, InhibitoryAmplitude);
+									//neurons_[links_[i][j]]->receive(index_write_, -g);
 								}
 							}
 					} else {
