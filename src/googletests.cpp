@@ -59,10 +59,10 @@ TEST(NeuronTest, NumberSpikesWithInput2 /*	1.01	*/ ) {
 	/*	We expect 4 spikes within an interval of time of 400 milliseconds.	*/
 	EXPECT_EQ(4, network.getNeurons()[0]->getTime().size());
 		
-	EXPECT_NEAR(92.3, network.getNeurons()[0]->getTime()[0], 92.5);
-	EXPECT_NEAR(186.7, network.getNeurons()[0]->getTime()[1],186.9 );
-	EXPECT_NEAR(281.1, network.getNeurons()[0]->getTime()[2], 281.3);
-	EXPECT_NEAR(375.5, network.getNeurons()[0]->getTime()[3], 375.7);
+	EXPECT_EQ(92.4, network.getNeurons()[0]->getTime()[0]);
+	EXPECT_EQ(186.8, network.getNeurons()[0]->getTime()[1]);
+	EXPECT_EQ(281.2, network.getNeurons()[0]->getTime()[2]);
+	EXPECT_EQ(375.6, network.getNeurons()[0]->getTime()[3]);
 }
 TEST(NetworkTest, WithoutSpikes)
 {	/*	We check that the spike does not get transmitted if the first neuron

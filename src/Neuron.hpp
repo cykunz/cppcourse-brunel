@@ -14,7 +14,7 @@ class Neuron {
 	private:	
 		/*!	The neuron is characterized by its membrane potential,
 		 * 	number of spikes, time at which the spikes occured, its present time, 
-		 * 	its input, neurons it is linked to and whether it is refractory or not. 
+		 * 	its input, neurons it is linked to and its refractory time left.
 		 * 
 		 * 	Each neuron also has a ring buffer in order to put into place  a delay. Indeed,
 		 * 	when a neuron receives a spike, it will only be saved in the ring buffer after
@@ -25,10 +25,9 @@ class Neuron {
 		vector<unsigned int> linked_neurons_;	/**<	Neurons linked to this current neuron.							*/
 		vector<double> time_;					/**<	Record of times when a spike occured.							*/
 		double membrane_potential_;				/**<	Membrane potential.												*/
-		int present_time_;						/**<	Local clock of neuron.											*/
-		bool is_refractory_;					/**<	Determines whether the neuron is refractory or not.				*/
-		vector<double> buffer_;					/**<	 Ring buffer installing delay principle.						*/
-
+		unsigned int present_time_;				/**<	Local clock of neuron.											*/
+		vector<double> buffer_;					/**<	Ring buffer installing delay principle.							*/
+		unsigned int refractory_time_;			/**<	Refractory time of the neuron.									*/
 
 	
 	public:
@@ -37,8 +36,8 @@ class Neuron {
 	 *  and no membrane potential. It will furthermore not be linked to any neuron, nor have spike times
 	 * 	recorded. Its buffer will be initialized to delay_step+1.	*/
 	Neuron(	bool excitatory=false, double input=0.0, vector<unsigned int> linked=vector<unsigned int>(0),
-			vector<double> time = vector<double>(0.0), double potential=0.0, int present=0, bool refractory=false,
-			vector<double> b=vector<double>(delay_steps+1));
+			vector<double> time = vector<double>(0.0), double potential=0.0, unsigned int present=0,
+			vector<double> b=vector<double>(delay_steps+1), unsigned int refract=0);
 			
 	//!	Destructor
 	/*!	Clears the linked neurons vector of all pointers, by deleting them.	*/
@@ -62,9 +61,12 @@ class Neuron {
 	//!	Gets the membrane potential
 	/*!	@return Membrane potential.	*/
 	double getMembranePotential() const;
-	//!	Gets the refractory state
-	/*!	@return bool: if refractory or not.	*/
-	bool getRefractory() const;
+	//! Gets the present time of the neuron
+	/*!	@return unsigned int: Present time of neuron in time steps dt. */
+	unsigned int getPresentTime() const;
+	//!	Gets the refractory time left of the neuron.
+	/*!	@return unsigned int: Refractory time left for the neuron.	*/
+	unsigned int getRefractoryTime() const;
 	//!	Gets the times at which spikes occurred
 	/*!	@return Vector of the times at which the spikes occurred.	*/
 	vector<double> getTime() const;
@@ -83,9 +85,12 @@ class Neuron {
 	//!	Sets the membrane potential
 	/*!	@param	new_potential: New membrane potential.*/
 	void setMembranePotential(double const& new_potential);
-	//!	Sets the refractory state
-	/*!	@param	is_refractory: Bool of whether it will be refractory or not.	*/
-	void setRefractory(bool const& is_refractory);
+	//!	Sets the present time of the neuron
+	/*!	@param new_present: New present time. */
+	void setPresentTime(unsigned int const& new_present);
+	//!	Sets the refractory time of the neuron.
+	/*!	@param new_refract: New refractory time.	*/
+	void setRefractoryTime(unsigned int const& new_refract);
 	//!	Sets the vector of times of spikes
 	/*!	@param	new_time: New vector of times of spikes.	*/
 	void setTime(vector<double> const& new_time);

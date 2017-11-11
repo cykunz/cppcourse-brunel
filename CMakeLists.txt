@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (Network)
 
-set(CMAKE_CXX_FLAGS " -W -Wall -pedantic -std=c++11 ")
+set(CMAKE_CXX_FLAGS " -W -Wall -pedantic -std=c++11 -O2")
 
 add_executable(OneNeuron ../src/Neuron.cpp ../src/Network.cpp ../src/oneneurontest.cpp)
 add_executable(Buffer ../src/Neuron.cpp ../src/Network.cpp ../src/buffertest.cpp)

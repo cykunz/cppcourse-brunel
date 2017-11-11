@@ -7,9 +7,9 @@
 using namespace std;
 
 Neuron::Neuron(	bool excitatory, double input, vector<unsigned int> linked, vector<double> time, 
-				double potential, int present, bool refractory, vector<double> b)
+				double potential, unsigned int present, vector<double> b, unsigned int refract)
 	: 	excitatory_(excitatory), input_(input), linked_neurons_(linked),  time_(time), membrane_potential_(potential),
-		present_time_(present), is_refractory_(refractory), buffer_(b)
+		present_time_(present), buffer_(b), refractory_time_(refract)
 {}
 
 Neuron::~Neuron()
@@ -31,16 +31,20 @@ double Neuron::getInput() const
 {	return input_;
 }
 
-double Neuron::getMembranePotential() const
-{	return membrane_potential_;
-}
-
 vector<unsigned int> Neuron::getLinkedNeurons() const
 {	return linked_neurons_;
 }
 
-bool Neuron::getRefractory() const
-{	return is_refractory_;
+double Neuron::getMembranePotential() const
+{	return membrane_potential_;
+}
+
+unsigned int Neuron::getPresentTime() const
+{	return present_time_;
+}
+
+unsigned int Neuron::getRefractoryTime() const
+{	return refractory_time_;
 }
 
 vector<double> Neuron::getTime() const
@@ -66,8 +70,12 @@ void Neuron::setMembranePotential(double const& new_potential)
 {	membrane_potential_=new_potential;
 }
 
-void Neuron::setRefractory(bool const& new_refractory)
-{	is_refractory_=new_refractory;
+void Neuron::setPresentTime(unsigned int const& new_present)
+{	present_time_=new_present;
+}
+
+void Neuron::setRefractoryTime(unsigned int const& new_refract)
+{	refractory_time_=new_refract;
 }
 
 void Neuron::setTime(vector<double> const& new_time)
@@ -79,8 +87,6 @@ void Neuron::setTime(vector<double> const& new_time)
 void Neuron::addLink(unsigned int const& neuron)
 {	/*	Adds the index of a neuron to the list of neurons linked.	*/
 	linked_neurons_.push_back(neuron);
-	/*linked_neurons_[current_index_]=neuron;
-	++current_index_;*/
 }
 
 void Neuron::addTimeValue(int const& new_time_value)
@@ -93,7 +99,6 @@ double Neuron::MembranePotentialEquation(double const& amplitude) const
 	
 	/*	Equation based on the differential equation for the evolution of the neuron's membrane
 	 * 	potential. */
-	//return (getMembranePotential()*C)+(getInput()*D)+(amplitude);
 	return (membrane_potential_*C)+(input_*D)+(amplitude);
 }
 
@@ -123,48 +128,27 @@ void Neuron::showTimeValues() const
 }
 
 bool Neuron::update(unsigned int const& randomspikes, unsigned int const& to_read)
-{	/*	Initialization of the spike_time to 0 (no spikes yet).	*/
-	int spike_time(0);
-	
-	/*	Determines if there was a spike or not during this time step.	*/
+{	/*	Will record if the neuron spikes or not.	*/
 	bool spike(false);
-
-	/*	If the membrane potential is higher than the threshold, there is a spike by definition.	*/
-	if(membrane_potential_>MembraneThreshold)
-	{	
-		/*	Sets the spike time at the present, which is when the spike occurred.	*/
-		spike_time=present_time_;
-		
-		/*	Adds the time at which the spike occurred to the vector corresponding.	*/
-		addTimeValue(spike_time);
-		
-		/*	The spike value is set to true.	*/
-		 spike=true;
-		 
-		 /*	The neuron is then in its refractory phase, and the membrane potential is set to the
-		  * reset value.	*/
-		 is_refractory_=true;
-		 membrane_potential_=MembraneReset;
-	 }
-	 
-	 if(is_refractory_)
+	/*	If the neuron is still in his refractory period...	*/
+	 if(refractory_time_>0)
 	 {	
-		 /*	If the present time is beyond the refractory period after the spike time, 
-		  * the neuron is not refractory anymore.	*/
-
-		if(present_time_>(spike_time+RefractoryPeriod))
-		 {
-
-		is_refractory_=false;
-			}
-	 } else {
-		 
-		 /*	If the neuron isn't refractory, then the membrane potential can be updated with the amplitude of
-		  * the number of spikes in the buffer at index: to_read and the random spikes given by external
-		  * neurons.	*/
-		 membrane_potential_=MembranePotentialEquation(buffer_[to_read]+(randomspikes*Amplitude));
-	 }
-	 
+		 /*	Its membrane potential is reset, and the refractory time decrements.	*/
+		 membrane_potential_=MembraneReset;
+		--refractory_time_;
+	} else if (membrane_potential_>MembraneThreshold)
+	{	/*	If the neuron's membrane potential reaches the threshold, it spikes by definition.	*/
+		spike=true;
+		/*	The spike time is saved, and the neuron is refractory. Its refractory time remaining is 
+		 * 	set to the refractory period - 1.	*/
+		addTimeValue(present_time_);
+		refractory_time_=RefractoryPeriod-1;
+	} else {
+		/*	If the neuron isn't refractory and its potential hasn't reached the threshold,
+		 * 	its membrane potential evolves with the differential equation characterizing the
+		 * 	membrane potential evolution over time.	*/
+			membrane_potential_=MembranePotentialEquation(buffer_[to_read]+(randomspikes*Amplitude));
+	}
 	 
 	 	
 	 /*		We reset the buffer at index to_read to 0.	*/

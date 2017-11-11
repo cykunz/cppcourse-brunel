@@ -1,1 +1,1 @@
-/usr/bin/c++    -W -Wall -pedantic -std=c++11    CMakeFiles/Buffer.dir/Neuron.cpp.o CMakeFiles/Buffer.dir/Network.cpp.o CMakeFiles/Buffer.dir/buffertest.cpp.o  -o Buffer -rdynamic 
+/usr/bin/c++    -W -Wall -pedantic -std=c++11 -O2   CMakeFiles/Buffer.dir/Neuron.cpp.o CMakeFiles/Buffer.dir/Network.cpp.o CMakeFiles/Buffer.dir/buffertest.cpp.o  -o Buffer -rdynamic 

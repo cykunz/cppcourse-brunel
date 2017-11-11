@@ -13,7 +13,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classNeuron_a3778933b884dea19411358a851a65ed2}{Neuron} (bool excitatory=false, double input=0.\-0, vector$<$ unsigned int $>$ linked=vector$<$ unsigned int $>$(0), vector$<$ double $>$ time=vector$<$ double $>$(0.\-0), double potential=0.\-0, int present=0, bool refractory=false, vector$<$ double $>$ b=vector$<$ double $>$(delay\-\_\-steps+1))
+\hyperlink{classNeuron_a6808c05f7aeabce8bd5b72cf05f7d3c4}{Neuron} (bool excitatory=false, double input=0.\-0, vector$<$ unsigned int $>$ linked=vector$<$ unsigned int $>$(0), vector$<$ double $>$ time=vector$<$ double $>$(0.\-0), double potential=0.\-0, unsigned int present=0, vector$<$ double $>$ b=vector$<$ double $>$(delay\-\_\-steps+1), unsigned int refract=0)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classNeuron_a94a250ce7e167760e593979b899745b1}{$\sim$\-Neuron} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -27,8 +27,10 @@ vector$<$ unsigned int $>$ \hyperlink{classNeuron_a3495ab6e72f3f2e74fe4e0396400f
 \begin{DoxyCompactList}\small\item\em Gets the linked neurons. \end{DoxyCompactList}\item 
 double \hyperlink{classNeuron_a86341dee7a81765fe4840777a008c688}{get\-Membrane\-Potential} () const 
 \begin{DoxyCompactList}\small\item\em Gets the membrane potential. \end{DoxyCompactList}\item 
-bool \hyperlink{classNeuron_ac648235e5b9e8ebf05b50afd507c9348}{get\-Refractory} () const 
-\begin{DoxyCompactList}\small\item\em Gets the refractory state. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNeuron_a794164b45de932a0b65cc65002bb579f}{get\-Present\-Time} () const 
+\begin{DoxyCompactList}\small\item\em Gets the present time of the neuron. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNeuron_a814e22e430a10855beac8a285b674957}{get\-Refractory\-Time} () const 
+\begin{DoxyCompactList}\small\item\em Gets the refractory time left of the neuron. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \hyperlink{classNeuron_a9c4fb30247f30a3cbb8fc1e93a3f06d2}{get\-Time} () const 
 \begin{DoxyCompactList}\small\item\em Gets the times at which spikes occurred. \end{DoxyCompactList}\item 
 void \hyperlink{classNeuron_af1c7208a3e5b06a8aa0019ebd0418c2c}{set\-Buffer} (int const \&idx, double const \&new\-\_\-value)
@@ -39,8 +41,10 @@ void \hyperlink{classNeuron_a63412f798c2ef1c8c41199b61b3c3d9a}{set\-Input} (doub
 \begin{DoxyCompactList}\small\item\em Sets the input value. \end{DoxyCompactList}\item 
 void \hyperlink{classNeuron_a5b44817a5923e963314bf8b6fa018635}{set\-Membrane\-Potential} (double const \&new\-\_\-potential)
 \begin{DoxyCompactList}\small\item\em Sets the membrane potential. \end{DoxyCompactList}\item 
-void \hyperlink{classNeuron_a32570ad7514c315829559378fbc359bc}{set\-Refractory} (bool const \&is\-\_\-refractory)
-\begin{DoxyCompactList}\small\item\em Sets the refractory state. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a502684935dbd30fad3c9968943cd292e}{set\-Present\-Time} (unsigned int const \&new\-\_\-present)
+\begin{DoxyCompactList}\small\item\em Sets the present time of the neuron. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_aea0bf060daa71be7088a882802f85dad}{set\-Refractory\-Time} (unsigned int const \&new\-\_\-refract)
+\begin{DoxyCompactList}\small\item\em Sets the refractory time of the neuron. \end{DoxyCompactList}\item 
 void \hyperlink{classNeuron_a3fd1e5b3fcc9c7a36ab78c330a29e4f8}{set\-Time} (vector$<$ double $>$ const \&new\-\_\-time)
 \begin{DoxyCompactList}\small\item\em Sets the vector of times of spikes. \end{DoxyCompactList}\item 
 void \hyperlink{classNeuron_a6468e6ea9f34e7ce0414018c0ca52a1c}{add\-Link} (unsigned int const \&neuron)
@@ -68,11 +72,11 @@ vector$<$ double $>$ \hyperlink{classNeuron_a7674c161dce2a7990b2ae2ebaa638ff6}{t
 \item 
 double \hyperlink{classNeuron_a58829bf280bb52776e8842c71a92af4a}{membrane\-\_\-potential\-\_\-}
 \item 
-int \hyperlink{classNeuron_a548aa19e97c22a209419f8e14aaf0d72}{present\-\_\-time\-\_\-}
-\item 
-bool \hyperlink{classNeuron_a16f9f6f89c1bc27ca4f2cfa868c640d5}{is\-\_\-refractory\-\_\-}
+unsigned int \hyperlink{classNeuron_a392877d74e2b7f46002cf8576c13c384}{present\-\_\-time\-\_\-}
 \item 
 vector$<$ double $>$ \hyperlink{classNeuron_ab2abc06234893064464b0c5ac4374ada}{buffer\-\_\-}
+\item 
+unsigned int \hyperlink{classNeuron_a09591c9e23ff936d8479d3abb087439e}{refractory\-\_\-time\-\_\-}
 \end{DoxyCompactItemize}
 
 
@@ -82,7 +86,7 @@ vector$<$ double $>$ \hyperlink{classNeuron_ab2abc06234893064464b0c5ac4374ada}{b
 Class representing an individual neuron. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classNeuron_a3778933b884dea19411358a851a65ed2}{\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\hypertarget{classNeuron_a6808c05f7aeabce8bd5b72cf05f7d3c4}{\index{Neuron@{Neuron}!Neuron@{Neuron}}
 \index{Neuron@{Neuron}!Neuron@{Neuron}}
 \subsubsection[{Neuron}]{\setlength{\rightskip}{0pt plus 5cm}Neuron\-::\-Neuron (
 \begin{DoxyParamCaption}
@@ -91,11 +95,11 @@ Class representing an individual neuron.
 \item[{vector$<$ unsigned int $>$}]{linked = {\ttfamily vector$<$unsigned~int$>$(0)}, }
 \item[{vector$<$ double $>$}]{time = {\ttfamily vector$<$double$>$(0.0)}, }
 \item[{double}]{potential = {\ttfamily 0.0}, }
-\item[{int}]{present = {\ttfamily 0}, }
-\item[{bool}]{refractory = {\ttfamily false}, }
-\item[{vector$<$ double $>$}]{b = {\ttfamily vector$<$double$>$(delay\-\_\-steps+1)}}
+\item[{unsigned int}]{present = {\ttfamily 0}, }
+\item[{vector$<$ double $>$}]{b = {\ttfamily vector$<$double$>$(delay\-\_\-steps+1)}, }
+\item[{unsigned int}]{refract = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)}}\label{classNeuron_a3778933b884dea19411358a851a65ed2}
+)}}\label{classNeuron_a6808c05f7aeabce8bd5b72cf05f7d3c4}
 
 
 Constructor. 
@@ -221,19 +225,33 @@ Gets the membrane potential.
 \begin{DoxyReturn}{Returns}
 Membrane potential. 
 \end{DoxyReturn}
-\hypertarget{classNeuron_ac648235e5b9e8ebf05b50afd507c9348}{\index{Neuron@{Neuron}!get\-Refractory@{get\-Refractory}}
-\index{get\-Refractory@{get\-Refractory}!Neuron@{Neuron}}
-\subsubsection[{get\-Refractory}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::get\-Refractory (
+\hypertarget{classNeuron_a794164b45de932a0b65cc65002bb579f}{\index{Neuron@{Neuron}!get\-Present\-Time@{get\-Present\-Time}}
+\index{get\-Present\-Time@{get\-Present\-Time}!Neuron@{Neuron}}
+\subsubsection[{get\-Present\-Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Neuron\-::get\-Present\-Time (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classNeuron_ac648235e5b9e8ebf05b50afd507c9348}
+) const}}\label{classNeuron_a794164b45de932a0b65cc65002bb579f}
 
 
-Gets the refractory state. 
+Gets the present time of the neuron. 
 
 \begin{DoxyReturn}{Returns}
-bool\-: if refractory or not. 
+unsigned int\-: Present time of neuron in time steps dt. 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a814e22e430a10855beac8a285b674957}{\index{Neuron@{Neuron}!get\-Refractory\-Time@{get\-Refractory\-Time}}
+\index{get\-Refractory\-Time@{get\-Refractory\-Time}!Neuron@{Neuron}}
+\subsubsection[{get\-Refractory\-Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Neuron\-::get\-Refractory\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a814e22e430a10855beac8a285b674957}
+
+
+Gets the refractory time left of the neuron. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int\-: Refractory time left for the neuron. 
 \end{DoxyReturn}
 \hypertarget{classNeuron_a9c4fb30247f30a3cbb8fc1e93a3f06d2}{\index{Neuron@{Neuron}!get\-Time@{get\-Time}}
 \index{get\-Time@{get\-Time}!Neuron@{Neuron}}
@@ -354,20 +372,36 @@ Sets the membrane potential.
 {\em new\-\_\-potential} & New membrane potential. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classNeuron_a32570ad7514c315829559378fbc359bc}{\index{Neuron@{Neuron}!set\-Refractory@{set\-Refractory}}
-\index{set\-Refractory@{set\-Refractory}!Neuron@{Neuron}}
-\subsubsection[{set\-Refractory}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::set\-Refractory (
+\hypertarget{classNeuron_a502684935dbd30fad3c9968943cd292e}{\index{Neuron@{Neuron}!set\-Present\-Time@{set\-Present\-Time}}
+\index{set\-Present\-Time@{set\-Present\-Time}!Neuron@{Neuron}}
+\subsubsection[{set\-Present\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::set\-Present\-Time (
 \begin{DoxyParamCaption}
-\item[{bool const \&}]{is\-\_\-refractory}
+\item[{unsigned int const \&}]{new\-\_\-present}
 \end{DoxyParamCaption}
-)}}\label{classNeuron_a32570ad7514c315829559378fbc359bc}
+)}}\label{classNeuron_a502684935dbd30fad3c9968943cd292e}
 
 
-Sets the refractory state. 
+Sets the present time of the neuron. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em is\-\_\-refractory} & Bool of whether it will be refractory or not. \\
+{\em new\-\_\-present} & New present time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_aea0bf060daa71be7088a882802f85dad}{\index{Neuron@{Neuron}!set\-Refractory\-Time@{set\-Refractory\-Time}}
+\index{set\-Refractory\-Time@{set\-Refractory\-Time}!Neuron@{Neuron}}
+\subsubsection[{set\-Refractory\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::set\-Refractory\-Time (
+\begin{DoxyParamCaption}
+\item[{unsigned int const \&}]{new\-\_\-refract}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_aea0bf060daa71be7088a882802f85dad}
+
+
+Sets the refractory time of the neuron. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-refract} & New refractory time. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classNeuron_a3fd1e5b3fcc9c7a36ab78c330a29e4f8}{\index{Neuron@{Neuron}!set\-Time@{set\-Time}}
@@ -428,24 +462,24 @@ bool\-: Whether there has been a spike or not.
 Ring buffer installing delay principle. \hypertarget{classNeuron_a4450ff3bd20d2e5b4f74746068b8d461}{\index{Neuron@{Neuron}!excitatory\-\_\-@{excitatory\-\_\-}}
 \index{excitatory\-\_\-@{excitatory\-\_\-}!Neuron@{Neuron}}
 \subsubsection[{excitatory\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::excitatory\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a4450ff3bd20d2e5b4f74746068b8d461}
-The neuron is characterized by its membrane potential, number of spikes, time at which the spikes occured, its present time, its input, neurons it is linked to and whether it is refractory or not.
+The neuron is characterized by its membrane potential, number of spikes, time at which the spikes occured, its present time, its input, neurons it is linked to and its refractory time left.
 
 Each neuron also has a ring buffer in order to put into place a delay. Indeed, when a neuron receives a spike, it will only be saved in the ring buffer after a delay of delay\-\_\-steps. Boolean determining if neuron is excitatory or inhibitory. \hypertarget{classNeuron_a9ed47eb032d964fdebc77bca888226fa}{\index{Neuron@{Neuron}!input\-\_\-@{input\-\_\-}}
 \index{input\-\_\-@{input\-\_\-}!Neuron@{Neuron}}
 \subsubsection[{input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::input\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a9ed47eb032d964fdebc77bca888226fa}
-Input received from environment. \hypertarget{classNeuron_a16f9f6f89c1bc27ca4f2cfa868c640d5}{\index{Neuron@{Neuron}!is\-\_\-refractory\-\_\-@{is\-\_\-refractory\-\_\-}}
-\index{is\-\_\-refractory\-\_\-@{is\-\_\-refractory\-\_\-}!Neuron@{Neuron}}
-\subsubsection[{is\-\_\-refractory\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::is\-\_\-refractory\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a16f9f6f89c1bc27ca4f2cfa868c640d5}
-Determines whether the neuron is refractory or not. \hypertarget{classNeuron_a71f410f0b2026456ab554bfb6f1b4b9e}{\index{Neuron@{Neuron}!linked\-\_\-neurons\-\_\-@{linked\-\_\-neurons\-\_\-}}
+Input received from environment. \hypertarget{classNeuron_a71f410f0b2026456ab554bfb6f1b4b9e}{\index{Neuron@{Neuron}!linked\-\_\-neurons\-\_\-@{linked\-\_\-neurons\-\_\-}}
 \index{linked\-\_\-neurons\-\_\-@{linked\-\_\-neurons\-\_\-}!Neuron@{Neuron}}
 \subsubsection[{linked\-\_\-neurons\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned int$>$ Neuron\-::linked\-\_\-neurons\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a71f410f0b2026456ab554bfb6f1b4b9e}
 Neurons linked to this current neuron. \hypertarget{classNeuron_a58829bf280bb52776e8842c71a92af4a}{\index{Neuron@{Neuron}!membrane\-\_\-potential\-\_\-@{membrane\-\_\-potential\-\_\-}}
 \index{membrane\-\_\-potential\-\_\-@{membrane\-\_\-potential\-\_\-}!Neuron@{Neuron}}
 \subsubsection[{membrane\-\_\-potential\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::membrane\-\_\-potential\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a58829bf280bb52776e8842c71a92af4a}
-Membrane potential. \hypertarget{classNeuron_a548aa19e97c22a209419f8e14aaf0d72}{\index{Neuron@{Neuron}!present\-\_\-time\-\_\-@{present\-\_\-time\-\_\-}}
+Membrane potential. \hypertarget{classNeuron_a392877d74e2b7f46002cf8576c13c384}{\index{Neuron@{Neuron}!present\-\_\-time\-\_\-@{present\-\_\-time\-\_\-}}
 \index{present\-\_\-time\-\_\-@{present\-\_\-time\-\_\-}!Neuron@{Neuron}}
-\subsubsection[{present\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Neuron\-::present\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a548aa19e97c22a209419f8e14aaf0d72}
-Local clock of neuron. \hypertarget{classNeuron_a7674c161dce2a7990b2ae2ebaa638ff6}{\index{Neuron@{Neuron}!time\-\_\-@{time\-\_\-}}
+\subsubsection[{present\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Neuron\-::present\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a392877d74e2b7f46002cf8576c13c384}
+Local clock of neuron. \hypertarget{classNeuron_a09591c9e23ff936d8479d3abb087439e}{\index{Neuron@{Neuron}!refractory\-\_\-time\-\_\-@{refractory\-\_\-time\-\_\-}}
+\index{refractory\-\_\-time\-\_\-@{refractory\-\_\-time\-\_\-}!Neuron@{Neuron}}
+\subsubsection[{refractory\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Neuron\-::refractory\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a09591c9e23ff936d8479d3abb087439e}
+Refractory time of the neuron. \hypertarget{classNeuron_a7674c161dce2a7990b2ae2ebaa638ff6}{\index{Neuron@{Neuron}!time\-\_\-@{time\-\_\-}}
 \index{time\-\_\-@{time\-\_\-}!Neuron@{Neuron}}
 \subsubsection[{time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ Neuron\-::time\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a7674c161dce2a7990b2ae2ebaa638ff6}
 Record of times when a spike occured. 

@@ -8,6 +8,7 @@ var searchData=
   ['getlinks',['getLinks',['../classNetwork.html#a619c7fc6bfe06db4b449c96051f9c409',1,'Network']]],
   ['getmembranepotential',['getMembranePotential',['../classNeuron.html#a86341dee7a81765fe4840777a008c688',1,'Neuron']]],
   ['getneurons',['getNeurons',['../classNetwork.html#a8032b42ba5c9c445dcc0dd0a4916f633',1,'Network']]],
-  ['getrefractory',['getRefractory',['../classNeuron.html#ac648235e5b9e8ebf05b50afd507c9348',1,'Neuron']]],
+  ['getpresenttime',['getPresentTime',['../classNeuron.html#a794164b45de932a0b65cc65002bb579f',1,'Neuron']]],
+  ['getrefractorytime',['getRefractoryTime',['../classNeuron.html#a814e22e430a10855beac8a285b674957',1,'Neuron']]],
   ['gettime',['getTime',['../classNeuron.html#a9c4fb30247f30a3cbb8fc1e93a3f06d2',1,'Neuron']]]
 ];

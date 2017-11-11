@@ -97,9 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3778933b884dea19411358a851a65ed2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a3778933b884dea19411358a851a65ed2">Neuron</a> (bool excitatory=false, double input=0.0, vector&lt; unsigned int &gt; linked=vector&lt; unsigned int &gt;(0), vector&lt; double &gt; time=vector&lt; double &gt;(0.0), double potential=0.0, int present=0, bool refractory=false, vector&lt; double &gt; b=vector&lt; double &gt;(delay_steps+1))</td></tr>
-<tr class="memdesc:a3778933b884dea19411358a851a65ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a3778933b884dea19411358a851a65ed2">More...</a><br/></td></tr>
-<tr class="separator:a3778933b884dea19411358a851a65ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6808c05f7aeabce8bd5b72cf05f7d3c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a6808c05f7aeabce8bd5b72cf05f7d3c4">Neuron</a> (bool excitatory=false, double input=0.0, vector&lt; unsigned int &gt; linked=vector&lt; unsigned int &gt;(0), vector&lt; double &gt; time=vector&lt; double &gt;(0.0), double potential=0.0, unsigned int present=0, vector&lt; double &gt; b=vector&lt; double &gt;(delay_steps+1), unsigned int refract=0)</td></tr>
+<tr class="memdesc:a6808c05f7aeabce8bd5b72cf05f7d3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a6808c05f7aeabce8bd5b72cf05f7d3c4">More...</a><br/></td></tr>
+<tr class="separator:a6808c05f7aeabce8bd5b72cf05f7d3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94a250ce7e167760e593979b899745b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a94a250ce7e167760e593979b899745b1">~Neuron</a> ()</td></tr>
 <tr class="memdesc:a94a250ce7e167760e593979b899745b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a94a250ce7e167760e593979b899745b1">More...</a><br/></td></tr>
 <tr class="separator:a94a250ce7e167760e593979b899745b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,9 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a86341dee7a81765fe4840777a008c688"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a86341dee7a81765fe4840777a008c688">getMembranePotential</a> () const </td></tr>
 <tr class="memdesc:a86341dee7a81765fe4840777a008c688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the membrane potential.  <a href="#a86341dee7a81765fe4840777a008c688">More...</a><br/></td></tr>
 <tr class="separator:a86341dee7a81765fe4840777a008c688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac648235e5b9e8ebf05b50afd507c9348"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#ac648235e5b9e8ebf05b50afd507c9348">getRefractory</a> () const </td></tr>
-<tr class="memdesc:ac648235e5b9e8ebf05b50afd507c9348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the refractory state.  <a href="#ac648235e5b9e8ebf05b50afd507c9348">More...</a><br/></td></tr>
-<tr class="separator:ac648235e5b9e8ebf05b50afd507c9348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794164b45de932a0b65cc65002bb579f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a794164b45de932a0b65cc65002bb579f">getPresentTime</a> () const </td></tr>
+<tr class="memdesc:a794164b45de932a0b65cc65002bb579f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the present time of the neuron.  <a href="#a794164b45de932a0b65cc65002bb579f">More...</a><br/></td></tr>
+<tr class="separator:a794164b45de932a0b65cc65002bb579f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a814e22e430a10855beac8a285b674957"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a814e22e430a10855beac8a285b674957">getRefractoryTime</a> () const </td></tr>
+<tr class="memdesc:a814e22e430a10855beac8a285b674957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the refractory time left of the neuron.  <a href="#a814e22e430a10855beac8a285b674957">More...</a><br/></td></tr>
+<tr class="separator:a814e22e430a10855beac8a285b674957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4fb30247f30a3cbb8fc1e93a3f06d2"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a9c4fb30247f30a3cbb8fc1e93a3f06d2">getTime</a> () const </td></tr>
 <tr class="memdesc:a9c4fb30247f30a3cbb8fc1e93a3f06d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the times at which spikes occurred.  <a href="#a9c4fb30247f30a3cbb8fc1e93a3f06d2">More...</a><br/></td></tr>
 <tr class="separator:a9c4fb30247f30a3cbb8fc1e93a3f06d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,9 +139,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b44817a5923e963314bf8b6fa018635"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a5b44817a5923e963314bf8b6fa018635">setMembranePotential</a> (double const &amp;new_potential)</td></tr>
 <tr class="memdesc:a5b44817a5923e963314bf8b6fa018635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the membrane potential.  <a href="#a5b44817a5923e963314bf8b6fa018635">More...</a><br/></td></tr>
 <tr class="separator:a5b44817a5923e963314bf8b6fa018635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32570ad7514c315829559378fbc359bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a32570ad7514c315829559378fbc359bc">setRefractory</a> (bool const &amp;is_refractory)</td></tr>
-<tr class="memdesc:a32570ad7514c315829559378fbc359bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the refractory state.  <a href="#a32570ad7514c315829559378fbc359bc">More...</a><br/></td></tr>
-<tr class="separator:a32570ad7514c315829559378fbc359bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502684935dbd30fad3c9968943cd292e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a502684935dbd30fad3c9968943cd292e">setPresentTime</a> (unsigned int const &amp;new_present)</td></tr>
+<tr class="memdesc:a502684935dbd30fad3c9968943cd292e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the present time of the neuron.  <a href="#a502684935dbd30fad3c9968943cd292e">More...</a><br/></td></tr>
+<tr class="separator:a502684935dbd30fad3c9968943cd292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0bf060daa71be7088a882802f85dad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#aea0bf060daa71be7088a882802f85dad">setRefractoryTime</a> (unsigned int const &amp;new_refract)</td></tr>
+<tr class="memdesc:aea0bf060daa71be7088a882802f85dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the refractory time of the neuron.  <a href="#aea0bf060daa71be7088a882802f85dad">More...</a><br/></td></tr>
+<tr class="separator:aea0bf060daa71be7088a882802f85dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd1e5b3fcc9c7a36ab78c330a29e4f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a3fd1e5b3fcc9c7a36ab78c330a29e4f8">setTime</a> (vector&lt; double &gt; const &amp;new_time)</td></tr>
 <tr class="memdesc:a3fd1e5b3fcc9c7a36ab78c330a29e4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the vector of times of spikes.  <a href="#a3fd1e5b3fcc9c7a36ab78c330a29e4f8">More...</a><br/></td></tr>
 <tr class="separator:a3fd1e5b3fcc9c7a36ab78c330a29e4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,18 +179,18 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a7674c161dce2a7990b2ae2ebaa638ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58829bf280bb52776e8842c71a92af4a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a58829bf280bb52776e8842c71a92af4a">membrane_potential_</a></td></tr>
 <tr class="separator:a58829bf280bb52776e8842c71a92af4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a548aa19e97c22a209419f8e14aaf0d72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a548aa19e97c22a209419f8e14aaf0d72">present_time_</a></td></tr>
-<tr class="separator:a548aa19e97c22a209419f8e14aaf0d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f9f6f89c1bc27ca4f2cfa868c640d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a16f9f6f89c1bc27ca4f2cfa868c640d5">is_refractory_</a></td></tr>
-<tr class="separator:a16f9f6f89c1bc27ca4f2cfa868c640d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392877d74e2b7f46002cf8576c13c384"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a392877d74e2b7f46002cf8576c13c384">present_time_</a></td></tr>
+<tr class="separator:a392877d74e2b7f46002cf8576c13c384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2abc06234893064464b0c5ac4374ada"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#ab2abc06234893064464b0c5ac4374ada">buffer_</a></td></tr>
 <tr class="separator:ab2abc06234893064464b0c5ac4374ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09591c9e23ff936d8479d3abb087439e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuron.html#a09591c9e23ff936d8479d3abb087439e">refractory_time_</a></td></tr>
+<tr class="separator:a09591c9e23ff936d8479d3abb087439e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classNeuron.html" title="Neuron class. ">Neuron</a> class. </p>
 <p>Class representing an individual neuron. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3778933b884dea19411358a851a65ed2"></a>
+<a class="anchor" id="a6808c05f7aeabce8bd5b72cf05f7d3c4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -221,20 +227,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>present</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>refractory</em> = <code>false</code>, </td>
+          <td class="paramtype">vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>b</em> = <code>vector&lt;double&gt;(delay_steps+1)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>b</em> = <code>vector&lt;double&gt;(delay_steps+1)</code>&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>refract</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -415,12 +421,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac648235e5b9e8ebf05b50afd507c9348"></a>
+<a class="anchor" id="a794164b45de932a0b65cc65002bb579f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Neuron::getRefractory </td>
+          <td class="memname">unsigned int Neuron::getPresentTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -428,8 +434,26 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the refractory state. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool: if refractory or not. </dd></dl>
+<p>Gets the present time of the neuron. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int: Present time of neuron in time steps dt. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a814e22e430a10855beac8a285b674957"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Neuron::getRefractoryTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the refractory time left of the neuron. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int: Refractory time left for the neuron. </dd></dl>
 
 </div>
 </div>
@@ -620,24 +644,48 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a32570ad7514c315829559378fbc359bc"></a>
+<a class="anchor" id="a502684935dbd30fad3c9968943cd292e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Neuron::setRefractory </td>
+          <td class="memname">void Neuron::setPresentTime </td>
           <td>(</td>
-          <td class="paramtype">bool const &amp;&#160;</td>
-          <td class="paramname"><em>is_refractory</em></td><td>)</td>
+          <td class="paramtype">unsigned int const &amp;&#160;</td>
+          <td class="paramname"><em>new_present</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the refractory state. </p>
+<p>Sets the present time of the neuron. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">is_refractory</td><td>Bool of whether it will be refractory or not. </td></tr>
+    <tr><td class="paramname">new_present</td><td>New present time. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aea0bf060daa71be7088a882802f85dad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neuron::setRefractoryTime </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int const &amp;&#160;</td>
+          <td class="paramname"><em>new_refract</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the refractory time of the neuron. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_refract</td><td>New refractory time. </td></tr>
   </table>
   </dd>
 </dl>
@@ -762,7 +810,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The neuron is characterized by its membrane potential, number of spikes, time at which the spikes occured, its present time, its input, neurons it is linked to and whether it is refractory or not.</p>
+<p>The neuron is characterized by its membrane potential, number of spikes, time at which the spikes occured, its present time, its input, neurons it is linked to and its refractory time left.</p>
 <p>Each neuron also has a ring buffer in order to put into place a delay. Indeed, when a neuron receives a spike, it will only be saved in the ring buffer after a delay of delay_steps. Boolean determining if neuron is excitatory or inhibitory. </p>
 
 </div>
@@ -785,27 +833,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Input received from environment. </p>
-
-</div>
-</div>
-<a class="anchor" id="a16f9f6f89c1bc27ca4f2cfa868c640d5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Neuron::is_refractory_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Determines whether the neuron is refractory or not. </p>
 
 </div>
 </div>
@@ -851,7 +878,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a548aa19e97c22a209419f8e14aaf0d72"></a>
+<a class="anchor" id="a392877d74e2b7f46002cf8576c13c384"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -859,7 +886,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Neuron::present_time_</td>
+          <td class="memname">unsigned int Neuron::present_time_</td>
         </tr>
       </table>
   </td>
@@ -869,6 +896,27 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Local clock of neuron. </p>
+
+</div>
+</div>
+<a class="anchor" id="a09591c9e23ff936d8479d3abb087439e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Neuron::refractory_time_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Refractory time of the neuron. </p>
 
 </div>
 </div>
@@ -900,7 +948,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 6 2017 14:07:21 for Neuron Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 11 2017 13:48:13 for Neuron Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
