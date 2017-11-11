@@ -5,7 +5,7 @@ The Introduction to this project is in src/html/index.html
 
 B. Program compilation 
 
-In the terminal, go to src. 
+In the terminal, go to src. Please make sure you delete the file "CMakeCache.txt" in src in order to execute correctly.
 1- Type in "cmake .." 
 2- Type in "make" 
 To launch overall program with 12500 neurons: 
